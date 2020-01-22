@@ -9,8 +9,8 @@ import time
 from Bio import Entrez
 
 Entrez.email = 'tud13145@temple.edu'
-Entrez.api_key = '19cb06584d5934d4f5799b48e2a539253708'
-in_file = "/Users/hadley/BoxSync/Mazumdar_Lab/Otsuka/2019- Gut/analysis/samples/list.txt" #raw_input('enter file')
+
+
 with open(in_file) as file: 
 	id_list = file.readlines()
 
