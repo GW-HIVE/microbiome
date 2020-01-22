@@ -10,7 +10,7 @@
 import os, re, csv
 my_dir = os.getcwd()
 term = "cen"
-gutDB = '/Users/hadley/BoxSync/Mazumdar_Lab/Otsuka/2019-Gut/analysis/blackGF.txt'
+
 #thresh = 5
 fileList = []
 sampleDict = {}
