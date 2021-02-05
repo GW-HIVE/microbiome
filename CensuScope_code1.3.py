@@ -21,7 +21,7 @@
     Code version:<1.0>
     Availibility:<https://github.com/GW-HIVE/microbiome>
 
-    !!!IMORTANT: BEFORE RUNNING, COPE THIS FILE AND PASTE IT TO THE SAME FOLDER YOU SPECIFY ON LINE 39!!!
+    !!!IMORTANT: BEFORE RUNNING, COPY THIS FILE AND PASTE IT TO THE SAME FOLDER YOU SPECIFY ON LINE 39!!!
     
     This code will go through all your CensuScope output files, grab all unique accessions from the files, check to see if any of the unique accessions are in the Blacklist
     (you can read up on what the blacklist is in Hadley's paper he sent you and you can download the Blacklist from the GFBK website), the code removes all the accession that are in the blacklist, then outputs a list of accessions that make your new reference base that you will use for your Hexagon computations.
@@ -36,7 +36,7 @@ term = "dnaAccessionBasedResult" #identifier of all CensuScope output files
 thresh = 10
 fileList = []
 list_Census = []
-#blacklist = '/Users/username/Documents/folder/blackList-v2.0.csv' #use your appropriate file path and un-comment out line
+#blacklist = '/Users/username/directory/folder/blackList-v2.0.csv' #use your appropriate file path and un-comment out line
 
 #______________________________________________________________________________#
 def createFileList(my_dir, term):
