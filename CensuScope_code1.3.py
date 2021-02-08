@@ -7,9 +7,9 @@
 
 
     Author(s); Lindsay Hopson and Charles Hadley King
-    Date: 02-05-2020
+    Date: 02-04-2021
     Title of program/source code: Unique Accession Identifier
-    Code version:2.0
+    Code version:2.1
     Type: Python 3.8.0
 
 
@@ -21,7 +21,8 @@
     Code version:<1.0>
     Availibility:<https://github.com/GW-HIVE/microbiome>
 
-
+    !!!IMORTANT: BEFORE RUNNING, COPY THIS FILE AND PASTE IT TO THE SAME FOLDER YOU SPECIFY ON LINE 39!!!
+    
     This code will go through all your CensuScope output files, grab all unique accessions from the files, check to see if any of the unique accessions are in the Blacklist
     (you can read up on what the blacklist is in Hadley's paper he sent you and you can download the Blacklist from the GFBK website), the code removes all the accession that are in the blacklist, then outputs a list of accessions that make your new reference base that you will use for your Hexagon computations.
     Code 2.2 takes the list of accession created from Code 1.3 and grabs  their Organism name, taxonomy, ect from NCBI using Biopython. 
@@ -32,11 +33,10 @@
 import os, re, csv
 my_dir = os.getcwd()
 term = "dnaAccessionBasedResult" #identifier of all CensuScope output files
-gutDB = '/Users/lindsayhopson/Documents/mouse_CensuScope_outputs/GutFeelingKnowledgeBase-v3.csv' #use your appropriate file path
 thresh = 10
 fileList = []
 list_Census = []
-blacklist = '/Users/lindsayhopson/Documents/mouse_CensuScope_outputs/blackList-v2.0.csv' #use your appropriate file path
+#blacklist = '/Users/username/directory/folder/blackList-v2.0.csv' #use your appropriate file path and un-comment out line
 
 #______________________________________________________________________________#
 def createFileList(my_dir, term):
@@ -82,6 +82,8 @@ def main ():
 
 
 #Outputs a file containing a list of accessions that were identified from all the mouse samples and that were above the 10 min match count threshold
+#Output file is a .txt file named "'all_Acc_in_mice_samples1.3'." 
+#Output file location will be within the same folder on your hard drive that this code is run from.
     with open('all_Acc_in_mice_samples1.3.txt', 'w') as file:
         for j in sample_list:
             print (j)
@@ -90,7 +92,6 @@ def main ():
 
 
 if __name__ == '__main__': main()
-
 
 
 
