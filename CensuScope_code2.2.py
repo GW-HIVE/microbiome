@@ -27,7 +27,10 @@
         Biopython package (http://biopython.org/DIST/docs/tutorial/Tutorial.pdf). In order
         to utilize this package in Python, follow the intallation instructions provided in
         the README link: https://github.com/biopython/biopython/blob/master/README.rst
-         
+        
+        !!Be sure that Biopython is installed and up to date.        
+        Use <pip3 install biopython> in command prompt for best results.
+        See (https://biopython.org/wiki/Download) for more details!!      
 """
 ######################################################################################
 
@@ -63,11 +66,6 @@ with open('orgNames_newAccList2.2.txt', 'w') as output_File:
 ######################################################################################
 """
 Troubleshooting:
--If given the error: "ModuleNotFoundError: No module named 'Bio'":
-          Be sure that Biopython is installed and up to date.        
-          Use <pip3 install biopython> in command prompt for best results.
-          See (https://biopython.org/wiki/Download) for more details. 
-          
 -If given the error: "urllib.error.URLError: <urlopen error 
           [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: 
           unable to get local issuer certificate (_ssl.c:1123)>" 
