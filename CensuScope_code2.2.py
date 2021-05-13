@@ -19,7 +19,7 @@
         Code version:<1.0>
         Availibility:<https://github.com/GW-HIVE/microbiome>
         
-        !!!IMORTANT: BEFORE RUNNING, COPY THIS SCRIPT FILE AND PASTE IT TO THE SAME FOLDER YOU SPECIFY ON LINE 39!!!
+        !!!IMPORTANT: BEFORE RUNNING, COPY THIS SCRIPT FILE AND PASTE IT TO THE SAME FOLDER YOU SPECIFY ON LINE 39!!!
 
         Takes a list of accessions and returnes the Accession, Organsism name, and TaxID
 
