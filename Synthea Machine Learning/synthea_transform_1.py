@@ -1,4 +1,4 @@
-#Python Script to Transform Raw Synthea COVID-19 Dataset:
+#Python Script to Transform Raw Synthea COVID-19 Dataset (1/2):
 #Author(s): James Ziegler, Alex Coleman
 #Date: 09/20/2021
 #Version: 1.0
