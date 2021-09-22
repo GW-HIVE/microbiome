@@ -1,0 +1,52 @@
+---
+title: "Synthea Machine Learning Analysis for Day All Data"
+author: "James Ziegler"
+date: "9/22/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+R Script to Predict ICU Admission Based on Day All Biomarker Levels
+
+Loading Packages:
+```{r packages_load}
+library(e1071)
+library(caTools)
+library(caret)
+library(rpart)
+```
+Loading Dataset
+```{r data_load}
+dataset <- read.csv("day_all_levels.csv", header=TRUE)
+dataset <- subset(dataset, select=-c(PATIENT, HomeIsolation, HospitalAdmit, Ventilated, Survivor))
+```
+Splitting Data into Train and Test
+```{r data_split}
+split <- sample.split(dataset, SplitRatio = 0.7)
+train_cl <- subset(dataset, split == "TRUE")
+test_cl <- subset(dataset, split == "FALSE")
+```
+Fitting Naive Bayes Model to training dataset
+```{r nb_model}
+set.seed(120)  # Setting Seed
+classifier_cl <- naiveBayes(ICUAdmit ~ ., data = train_cl) #Training on ICU Admit
+```
+Predicting on test data
+```{r nb_pred}
+y_pred <- predict(classifier_cl, newdata = test_cl)
+```
+Confusion Matrix
+```{r cm}
+cm <- table(test_cl$ICUAdmit, y_pred)
+```
+Model evaluation
+```{r model_eval}
+confusionMatrix(cm)
+```
+Important Predictors
+```{r featimp}
+tree <- rpart(ICUAdmit ~ ., data = dataset)
+(featimp_tree <- tree$variable.importance)
+```
